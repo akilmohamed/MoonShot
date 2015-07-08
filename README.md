@@ -8,6 +8,6 @@ a shot from the moon
 ```
 ### Example
 ```javascript
-/moonshot/:id/ 
-/moonshot/:id/:size
+/moonshot/eWRhpRV/ 
+/moonshot/eWRhpRV/120x120
 ```
