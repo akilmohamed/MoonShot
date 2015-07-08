@@ -1,0 +1,13 @@
+* {margin: 0;padding:0;}
+html, body {background: #f1f1f2;font-family: 'arial'; font-size: 12px}
+
+#wrapper {margin: 100px auto 0;width: 1000px;background: #fff;border-radius: 4px;padding:25px;box-shadow: 0 2px 4px -1px rgba(0,0,0,0.3);}
+.title {font-size: 28px}
+
+#list {margin-top: 20px}
+.moon-case {display: inline-block;padding:5px;border:1px solid #999;margin: 3px;float:left;}
+.moon-case img {display: block;max-width: 100px;margin: 0 auto;}
+.moon-detail {display: block;padding:5px 0 0;}
+
+.uploadcase {margin-bottom: 20px}
+.cb {clear: both;}

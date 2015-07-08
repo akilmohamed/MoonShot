@@ -1,0 +1,17 @@
+extends layout
+
+block content
+
+     #wrapper
+        .uploadcase
+            form(action="/moonshot/add", method="post", enctype="multipart/form-data", id='uploadform')
+                input(type='file', class=['ipt-file'], name='iptfile', accept='images/*')
+                input(type='submit', value='Upload')
+            .errmsg
+        .title Moonshot
+        #list
+            
+            .cb
+        // /list
+
+    // /WRAPPER
