@@ -1,5 +1,5 @@
 {
-  "name": "rocket",
+  "name": "MoonShoot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.13.2",
+    "connect-multiparty": "*",
+    "easyimage": "*",
     "express": "^4.13.1",
+    "imagemagick": "*",
+    "jade": "~1.11.0",
+    "mkdirp": "*",
+    "mongodb": "*",
+    "node-gyp": "*",
+    "node-uuid": "*",
     "path": "^0.11.14",
-    "jade": "~1.9.2"
+    "shortid": "*"
   }
 }

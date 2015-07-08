@@ -2,6 +2,9 @@ var path = require('path');
 var uuid = require('node-uuid');
 var mongo = require('mongodb');
 var shortid = require('shortid');
+var fs = require('fs');
+var easyimg = require('easyimage');
+
 
 var appDir = path.dirname(require.main.filename);
 var Server = mongo.Server,
@@ -30,15 +33,16 @@ exports.findById = function(req, res) {
         collection.findOne({'moonID':id}, function(err, item) {
            if(item.media){
 	            res.sendFile(appDir+'/public/files/'+item.media);
-	         
+	           
 	        }
         });
-    });
+    }); 
 };
 
 exports.thumbnail = function(req, res) {
     var id = req.params.id;
     var size = req.params.size;
+    var asize = size.split('x')
 
     db.collection('moonshots', function(err, collection) {
         collection.findOne({'moonID':id}, function(err, item) {
@@ -46,11 +50,23 @@ exports.thumbnail = function(req, res) {
 	            //res.sendFile(appDir+'/public/files/'+item.media);
 	            
 	            var file = appDir+'/public/files/'+item.media
-	            var dst = appDir+'/public/files/cropped/'+item.media
+	            var sdst = appDir+'/public/cropped/'+item.media
 
-
-
-	         	res.sendFile(dst);
+                easyimg.crop(
+                    {
+                        src: appDir+'/public/files/'+item.media,
+                        dst:sdst,
+                        cropwidth:asize[0],
+                        cropheight:asize[1]
+                    }).then(
+                      function(image) {
+                         res.sendFile(sdst);
+                      },
+                      function (err) {
+                        console.log(err);
+                      }
+                    );
+	         	
 	        }
         });
     });
