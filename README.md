@@ -1,5 +1,8 @@
 # MoonShot
-a shot from the moon
+a shot from the moon.
+
+[Node.js](http://nodejs.org/) application.
+
 
 ## API
 ```javascript
